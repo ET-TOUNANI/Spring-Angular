@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
-import { PageProduct, Product } from '../model/product.model';
 import { UUID } from 'angular2-uuid';
+import { PageProduct, Product } from 'src/app/model/product.model';
 
 @Injectable({
   providedIn: 'root'

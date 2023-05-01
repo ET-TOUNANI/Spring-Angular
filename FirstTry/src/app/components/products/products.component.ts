@@ -1,7 +1,7 @@
 import { Component , OnInit} from '@angular/core';
-import { ProductService } from '../services/product.service';
-import { PageProduct, Product } from '../model/product.model';
+import { PageProduct, Product } from '../../model/product.model';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ProductService } from 'src/app/services/product/product.service';
 
 @Component({
   selector: 'app-products',
@@ -18,7 +18,6 @@ export class ProductsComponent implements OnInit{
   totalPages:number=0;
 
   constructor(private productService : ProductService,private fb:FormBuilder){
-    this.productService = productService;
   }
 
   ngOnInit(){
