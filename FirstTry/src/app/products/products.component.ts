@@ -31,6 +31,7 @@ export class ProductsComponent implements OnInit{
   this.productService.getPageProducts(this.currentPage,this.size).subscribe((data:PageProduct)=>{
        this.products=data.products;
        this.totalPages=data.totalPages;
+       
     },
     Error => this.errorMessage = Error.message
     );
@@ -65,10 +66,17 @@ export class ProductsComponent implements OnInit{
   }
 
   handleSearchProducts(){
-    this.productService.searchProducts(this.searchFormGroup.value.keyword).subscribe(
-      (data:Product[])=>{
-        this.products=data;
+    this.productService.searchProducts(this.searchFormGroup.value.keyword,0,this.size).subscribe(
+      (data:PageProduct)=>{
+        this.products=data.products;
+        this.totalPages=data.totalPages;
       },Error=>this.errorMessage=Error.message
     )
+  }
+  handleChangePage(index:number){
+    this.currentPage=index;
+    if(this.searchFormGroup.value.keyword!="")
+      this.handleSearchProducts();
+    else this.handleGetPageProducts();
   }
 }

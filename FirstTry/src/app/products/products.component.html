@@ -10,7 +10,6 @@
     </div>
 
     <div class="card-body">
-      {{ searchFormGroup.value | json }}
       <form [formGroup]="searchFormGroup" (ngSubmit)="handleSearchProducts()">
         <div class="input-group">
           <label for="name" class="input-group-text">Keyword</label>
@@ -58,6 +57,17 @@
           </tr>
         </tbody>
       </table>
+      <ul class="nav nav-pills">
+        <li *ngFor="let item of [].constructor(this.totalPages); let i = index">
+          <a
+            (click)="handleChangePage(i)"
+            [ngClass]="this.currentPage == i ? 'btn-info' : 'btn-outline-info'"
+            class="btn m-1"
+          >
+            {{ i + 1 }}</a
+          >
+        </li>
+      </ul>
     </div>
   </div>
 </div>
