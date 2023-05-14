@@ -1,0 +1,17 @@
+<p>customer works!</p>
+
+<ng-container *ngIf="customers | async as listCustomers; else failureOrLoading">
+  <table>
+    <tr *ngFor="let item of customers | async">
+      <td>{{ item.name }}</td>
+    </tr>
+  </table>
+</ng-container>
+<ng-template #failureOrLoading>
+  <ng-container *ngIf="errorMessage; else loading">
+    <div class="text-danger">
+      {{ errorMessage }}
+    </div>
+  </ng-container>
+  <ng-template #loading> loading ... </ng-template>
+</ng-template>
