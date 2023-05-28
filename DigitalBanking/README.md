@@ -633,7 +633,10 @@ export interface Customer {
 ### Demo
 
 ![Demo](demo/front_strctr.png)
-![Demo](https://youtu.be/CKoFUCupv10)
+
+https://github.com/ET-TOUNANI/Spring-Angular/assets/74843162/06cfcf1f-18a6-4602-a351-e6b675f84f94
+
+
 
 ## Backend
 
