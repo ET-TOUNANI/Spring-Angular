@@ -633,7 +633,7 @@ export interface Customer {
 ### Demo
 
 ![Demo](demo/front_strctr.png)
-![Demo](demo/demovideo.mp4)
+![Demo](https://youtu.be/CKoFUCupv10)
 
 ## Backend
 
