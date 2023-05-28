@@ -1,3 +1,5 @@
+import {Customer} from "./customer.model";
+
 export interface AccountDetails {
   accountId:            string;
   balance:              number;
@@ -13,4 +15,10 @@ export interface AccountOperation {
   amount:        number;
   type:          string;
   description:   string;
+}
+
+export class Account {
+  accountNumber! : string;
+  accountType! : string;
+  customer! : Customer;
 }
